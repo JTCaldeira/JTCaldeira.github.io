@@ -22,10 +22,41 @@ plugins:
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
 
 
+collections:
+  learning:
+    output: true
+    permalink: /:collection/:title
+    sort_by: lesson_number
+
+
 defaults:
   -
     scope:
       path: ""
+    values:
+      layout: "page"
+  -
+    scope:
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      type: "learning"
+    values:
+      layout: "chapter"
+  -
+    scope:
+      path: "_learning/deep-learning"
+    values:
+      tag: "Deep Learning"
+  -
+    scope:
+      path: "_learning/machine-learning"
+    values:
+      tag: "Machine Learning"
+  -
+    scope:
+      path: "_learning/math"
+    values:
+      tag: "Math"
