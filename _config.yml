@@ -25,7 +25,6 @@ plugins:
 collections:
   learning:
     output: true
-    permalink: /:collection/:title
     sort_by: lesson_number
 
 
@@ -49,19 +48,23 @@ defaults:
     scope:
       path: "_learning/prerequisites"
     values:
+      permalink: /:collection/prerequisites/:title
       tag: "Prerequisites"
   -
     scope:
       path: "_learning/deep-learning"
     values:
+      permalink: /:collection/deep-learning/:title
       tag: "Deep Learning"
   -
     scope:
       path: "_learning/machine-learning"
     values:
+      permalink: /:collection/machine-learning/:title
       tag: "Machine Learning"
   -
     scope:
       path: "_learning/math"
     values:
+      permalink: /:collection/math/:title
       tag: "Math"
