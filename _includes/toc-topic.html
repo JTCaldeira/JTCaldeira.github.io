@@ -9,6 +9,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  margin-top: 7px;
 }
 
 .dropdown-content {
@@ -27,14 +28,14 @@
 
 <div class="dropdown">
   <a onclick="myFunction('myDropdown{{ include.topic }}')" class="dropbtn">{{ include.topic }}</a>
-  <ul id="myDropdown{{ include.topic }}" class="dropdown-content">
-  {% assign chapters = site.learning | where: "tag", include.topic %}
-      {% for chapter in chapters %}
-        <li>
-        <a href="{{ chapter.url }}">{{ chapter.title }}</a>
-        </li>
-      {% endfor %}
-  </ul>
+  <ol id="myDropdown{{ include.topic }}" class="dropdown-content" >
+    {% assign chapters = site.learning | where: "tag", include.topic %}
+    {% for chapter in chapters %}
+    <li>
+      <a href="{{ chapter.url }}">{{ chapter.title }}</a>
+    </li>
+    {% endfor %}
+  </ol>
 </div>
 
 <script>
