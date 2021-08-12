@@ -47,6 +47,11 @@ defaults:
       layout: "chapter"
   -
     scope:
+      path: "_learning/prerequisites"
+    values:
+      tag: "Prerequisites"
+  -
+    scope:
       path: "_learning/deep-learning"
     values:
       tag: "Deep Learning"
