@@ -6,7 +6,7 @@ body {
 
 p {
     line-height: 1.5;
-    margin: 30px 0;
+    margin: 25px 0;
 
     a {
         text-decoration: underline;
@@ -73,4 +73,8 @@ img::selection {
 img::-moz-selection {
     color: $white;
     background: transparent;
+}
+
+p + ul {
+    margin-top: -8px;
 }
