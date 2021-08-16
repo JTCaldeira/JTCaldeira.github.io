@@ -41,11 +41,6 @@ defaults:
       layout: "post"
   -
     scope:
-      type: "learning"
-    values:
-      layout: "chapter"
-  -
-    scope:
       path: "_learning/prerequisites"
     values:
       permalink: /:collection/prerequisites/:title

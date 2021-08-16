@@ -23,12 +23,24 @@ layout: default
     </div>
   </header>
 
+  {% if page.path == "learning.md" or page.path contains "_learning" %}
+  <div class="container col-11" style="font-size: 0.85em;">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 mx-auto">
+          {% include toc.html %}
+        </div>
+        <div class="col-lg-9 col-md-9 mx-auto">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  {% else %}
   <div class="container" style="font-size: 0.85em;">
     <div class="row">
       <div class="col-lg-10 col-md-11 mx-auto">
-
         {{ content }}
-
       </div>
     </div>
   </div>
+  {% endif %}
+

@@ -12,6 +12,4 @@ If you have:
 - Have ideas for how to improve the content
 - Would like to request some particular content in ML
 
-Then head over to the [contact](/contact) page and shoot me an e-mail.
-
-{% include toc.html %}
+Then please head over to the [contact](/contact) page and shoot me an e-mail.
