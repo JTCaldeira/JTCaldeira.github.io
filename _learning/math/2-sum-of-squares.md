@@ -21,7 +21,7 @@ Let us also consider a horizontal line that corresponds to the mean value of the
 
 We usually like to plot lines that nicely show trends between variables, but the line we chose does a visibly bad job at that. However obvious that might look to us though, before we can try to choose a better one, we first need to know how good (or... bad) of a "fit" that line is to the data. We can do that by measuring the distance between the line and each data point.
 
-We could choose the horizontal, perpendicular (*i.e.* orthogonal), or vertical distances between the line and the points. It is common to use regression to predict values of *y* from given values of *x*, so let us use the vertical distance. If we were trying to use the blue line to predict values of *y* from given values of *x*, this distance would represent the	*error*, or *residual*, in our prediction. The residuals between each point and the blue line are shown below as red dotted lines:
+We could choose the horizontal, perpendicular (*i.e.* orthogonal), or vertical distances between the line and the points. It is common to use regression to predict values of *y* from given values of *x*, so let us use the vertical distance. If we were trying to use the blue line to predict values of *y* from given values of *x*, this distance would represent the	*residual*, or *error*, in our prediction. The residuals between each point and the blue line are shown below as red dotted lines:
 
 <p align="center">
 	<img src="/img/learning/math/sum_of_squares_3.png"/>
