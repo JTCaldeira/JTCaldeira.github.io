@@ -16,4 +16,4 @@ There are three types of ML:
 
 The plan is to focus on supervised learning in the beginning of the development of the content, but the other two are definitely on the roadmap.
 
-Readers should go through the other pages in this section before moving on to the good stuff below.
+Readers should go through the other pages in this section (Prerequisites) before moving on to the good stuff below. The [next page](/learning/prerequisites/what-you-should-know) details what you should already be familiar with; and the pages that follow will be the basis for most, of the content in the other sections.
