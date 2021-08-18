@@ -56,22 +56,34 @@ The generic line equation is *y = a.x + b*, where *a* is the slope of the line a
 
 Here, *a.x<sub>n</sub> + b* is the output of a line function for the *n*-th *x* value, and *y<sub>n</sub>* is the actual (real) value associated with that same input. Since the sum of squares quantifies the error we make when trying to fit a function (in this case, a line) to some data, we call it an "error function".
 
-### Multivariate sum of squares
+We have seen that in this error function, which is a particular case of the sum of squares where our "fitting" function is a line, we observe the difference between the real data *y* and the output of a line function, given by *a.x + b*. But now that we have something to measure how good our line is, how do we improve it to fit the data better? We will learn how to do that later, but for now...
 
-In the example above, we wrote the sum of squares formula in terms of a function that takes scalars as an input. However, in many real world scenarios, data will be described by several variables (or attributes), and as such will be represented as a multidimensional vector. In that case, considering a linear function that takes an *m*-dimensional vector *x*, its equation would look like *y = a<sub>1</sub>.x<sub>1</sub> + a<sub>2</sub>.x<sub>2</sub> + ... + a<sub>m</sub>.x<sub>m</sub> + b*, where *x<sub>m</sub>* corresponds to the value of *x* for its *m*-th dimension, and *a<sub>m</sub>* is its coefficient. It is common to use **x** as opposed to *x* to refer to a vector, so let us use that notation henceforth. We can apply the sum of squares to nonlinear functions too, so let's use *f(***x***)* to refer to any type of function that we're using to try to fit our data. We can then rewrite the sum of squares as:
+The output of our line function is *f(x) = a.x + b*. We have no control over the values of *x*, as those are the samples of our dataset. We can, however, try to adjust *a* and *b* so that the loss function gives us a smaller value. For that reason, *a* and *b* are called *parameters* of our line function.
+
+We can do this for other linear functions! If, for example, we had 3-dimensional data tuples *(x, y, z)* as opposed to just 2-dimensional data tuples *(x, y)*, we would be trying to fit a 3-D hyperplane to the data instead of a line. Making *z* our target variable, we write the formula for a 3-D plane in terms of *x* and *y* as follows: *f(x, y) = a.x + b.y + c*. We can write the sum of squares expression for such a plane:
 
 <p align="center">
 	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_6.png"/>
 </p>
 
-Now, **x**<sub>*n*</sub>, the *n*-th input value to the function *f*, is no longer a scalar; but a vector with any number of dimensions.
+However, if we're dealing with data that has a higher dimensionality, we're gonna have a bad time writing the sum of squares expression...
+
+### Multivariate sum of squares
+
+In the example above, we wrote the sum of squares formula in terms of functions that deal with 2-dimensional and 3-dimensional data (where one of those dimensions is the target), respectively. In real world scenarios, we may come across data that is described by several more variables. It would be useful, then, to generalize the sum of squares expression so that it applies to data of any dimensionality. The equation for a linear function which takes an *m*-dimensional input *x* can be written as *f(x) = a<sub>1</sub>.x<sub>1</sub> + a<sub>2</sub>.x<sub>2</sub> + ... + a<sub>m</sub>.x<sub>m</sub> + b*. Here, *x<sub>m</sub>* corresponds to the value of *x* for its *m*-th dimension, and *a<sub>m</sub>* is its coefficient. We will refer to an *m*-dimensional input, *(x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>m</sub>)*, as **x** for simplicity. Now, we can use **x** to refer to an input vector with any dimensionality. We can then rewrite generalized the sum of squares as:
+
+<p align="center">
+	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_7.png"/>
+</p>
+
+Now, **x**<sub>*n*</sub>, the *n*-th input value, is a vector with any amount of dimensions. We still use *y<sub>n</sub>* to refer to the real target value for the *n*-th sample.
 
 ### Mean squared error
 
 A popular variation of the sum of squares is called the "mean squared error".
 
 <p align="center">
-	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_7.png"/>
+	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_8.png"/>
 </p>
 
 As the name suggests, the mean squared error over all *N* data points returns the *mean* (or average) error.
