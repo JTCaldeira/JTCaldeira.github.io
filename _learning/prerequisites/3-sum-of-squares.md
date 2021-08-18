@@ -58,13 +58,13 @@ Here, *a.x<sub>n</sub> + b* is the output of a line function for the *n*-th *x* 
 
 ### Multivariate sum of squares
 
-In the example above, we wrote the sum of squares formula in terms of a function that takes scalars as an input. However, in many real world scenarios, data will be described by several variables (or attributes), and as such will be represented as a multidimensional vector. In that case, considering a linear function that takes an *m*-dimensional vector *x*, its equation would look like *y = a<sub>1</sub>.x<sub>1</sub> + a<sub>2</sub>.x<sub>2</sub> + ... + a<sub>m</sub>.x<sub>m</sub> + b*, where *x<sub>m</sub>* corresponds to the value of *x* for its *m*-th dimension, and *a<sub>m</sub>* is its coefficient. We can, however, apply the sum of squares to nonlinear functions too, so let's use *f(***x***)* to refer to any type of function that we're using to try to fit our data. We can then rewrite the sum of squares as:
+In the example above, we wrote the sum of squares formula in terms of a function that takes scalars as an input. However, in many real world scenarios, data will be described by several variables (or attributes), and as such will be represented as a multidimensional vector. In that case, considering a linear function that takes an *m*-dimensional vector *x*, its equation would look like *y = a<sub>1</sub>.x<sub>1</sub> + a<sub>2</sub>.x<sub>2</sub> + ... + a<sub>m</sub>.x<sub>m</sub> + b*, where *x<sub>m</sub>* corresponds to the value of *x* for its *m*-th dimension, and *a<sub>m</sub>* is its coefficient. It is common to use **x** as opposed to *x* to refer to a vector, so let us use that notation henceforth. We can apply the sum of squares to nonlinear functions too, so let's use *f(***x***)* to refer to any type of function that we're using to try to fit our data. We can then rewrite the sum of squares as:
 
 <p align="center">
 	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_6.png"/>
 </p>
 
-Now, **x**<sub>*n*</sub>, the *n*-th input value to the function *f*, is no longer a scalar, but a vector with any number of dimensions.
+Now, **x**<sub>*n*</sub>, the *n*-th input value to the function *f*, is no longer a scalar; but a vector with any number of dimensions.
 
 ### Mean squared error
 
@@ -76,6 +76,14 @@ A popular variation of the sum of squares is called the "mean squared error".
 
 As the name suggests, the mean squared error over all *N* data points returns the *mean* (or average) error.
 
+### Error functions
+
+In mathematical optimization, a loss function, error function, or cost function, is a function that maps an event to its "cost" (a real number). In optimization, the goal is usually to *minimize a loss function*. In contrast, for a few particular domains, it is more common to instead try to *maximize an objective function* (also called reward function, utility function, etc.). We will however, only deal with the former, since it is *far* more common in the fields herein discussed.
+
+In statistics, a loss function is typically used to estimate parameters. It is a function of the difference between the values we predicted for some data and the true values for that data.
+
+It may now start to make sense that the sum of squared errors is one such loss function. If we were trying to use a line to predict, given a value of *x* in our dataset, what its corresponding value of *y* would be, the sum of squares would tell us whether it does a good job or not by computing a loss based on the distance between the image of *x* in our line and its real *y* value.
+
 ### Conclusions
 
 We looked at the "sum of squares" error function, also called "sum of squared errors", or just "squared errors". Here are a few final remarks regarding it.
@@ -83,7 +91,7 @@ We looked at the "sum of squares" error function, also called "sum of squared er
 I'd be remiss if I didn't mention the purpose of telling you about the sum of squares: it is the backbone of "least squares fitting", a standard approach in [*regression*](/learning/machine-learning/linear-regression). In least squares, we try to minimize the sum of squared errors between the data and whichever function we're trying to fit to it. We do that by tweaking the parameters of our function. In the case of the blue line we used as an example, we would adjust the slope *a* and *y*-intersept *b* to minimize the sum of squared errors. This concept extends to multivariable (or multidimension) contexts, where we may have a larger number of parameters to adjust.
 
 <sup>*\**</sup> - Squaring the residuals/errors is useful because:
-- Positive quadratic functions are *convex*, and a sum of convex functions is convex too. Convex functions are nice because they have a single global minimum, which means that "rolling downhill" from anywhere will take you to that global minimum. This means that optimization techniques, such as *gradient descent*, will always converge to the right answer.
+- Positive quadratic functions are *convex*, and a sum of convex functions is convex too. Convex functions are nice because they have a single global minimum, which means that "rolling downhill" from anywhere will take you to that global minimum. This means that optimization techniques, such as [*gradient descent*](/learning/prerequisites/gradient-descent), will always converge to the right answer.
 - Least squares has a *closed-form solution*, which allows us to compute the right answer (*i.e.* the one that minimizes the sum of squared errors) *directly*. That is, we can compute the best result numerically rather than analytically. This would not be possible if we used the absolute value of the errors instead of squaring them.
 
 If these last two paragraphs weren't all too clear to you, worry not. In the next pages in this section, we will discuss [optimization](/learning/prerequisites/optimization), wherein these concepts will be addressed and explained more thoroughly.
