@@ -12,9 +12,11 @@ Say you worked really hard and got your hands on the following two-dimensional d
 	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_1.png"/>
 </p>
 
-Let us use *x* and *y* to denote the first and second dimensions of the records, respectively.
+We will use *x* and *y* to denote the first and second dimensions of the records, respectively.
 
-Let us also consider a horizontal line that corresponds to the mean value of the *y* variable, whose equation is *y = 6.2*, and plot it alongside the data:
+Let us also refer to *y* as the *target variable*. From a statistics/machine learning point of view, a target variable is a variable (a dimension of the data) which we wish to be able to model and predict using other variables that describe the data. We use the word *sample*, or *record*, to refer to the set of variables which describe a certain object; and each sample in the dataset has a value for its target variable. In other words, when we use the word "sample", we will refer to all the dimensions of the data except for the one that we want to be able to model, that is, the target variable. In this case, our samples are *1*-dimensional, being described by the variable we called *x*. Usually, objects will be described by more features/variables, and thus samples will have more than just a single dimension (*x*). Furthermore, we usually refer to the set of samples and target values separately. In this case, for example, we could have a set of *x* values (samples) and another set of *y* values (target values for the samples). However, for simplicity in visualizing the data in a *2*-D plot, we're using *2*-tuples to represent the data points instead of separating it into two sets.
+
+Let us draw a horizontal line that corresponds to the mean value of the *y* variable, whose equation is *y = 6.2*, and plot it alongside the data:
 
 <p align="center">
 	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_2.png"/>
@@ -22,7 +24,7 @@ Let us also consider a horizontal line that corresponds to the mean value of the
 
 We usually like to plot lines that nicely show trends between variables, but the line we chose does a visibly bad job at that. However obvious that might look to us though, before we can try to choose a better one, we first need to know how good (or... bad) of a "fit" that line is to the data. We can do that by measuring the distance between the line and each data point.
 
-We could choose the horizontal, perpendicular (*i.e.* orthogonal), or vertical distances between the line and the points. It is common to use regression to predict values of *y* from given values of *x*, so let us use the vertical distance. If we were trying to use the blue line to predict values of *y* from given values of *x*, this distance would represent the	*residual*, or *error*, in our prediction. The residuals between each point and the blue line are shown below as red dotted lines:
+We could choose the horizontal, perpendicular (*i.e.* orthogonal), or vertical distances between the line and the points. It is common to use regression to predict values of *y* (the target variable) from given values of *x*, so let us use the vertical distance. If we were trying to use the blue line to predict values of *y* from given values of *x*, this distance would represent the	*residual*, or *error*, in our prediction. The residuals between each point and the blue line are shown below as red dotted lines:
 
 <p align="center">
 	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_3.png"/>
@@ -36,9 +38,9 @@ Why not just take the absolute value of the difference between the blue line and
 
 While that would solve the problem above, the absolute value is not continuously differentiable, which is a useful property for optimization techniques such as gradient descent (more on that later).
 
-In practice, we square the residuals (or errors) since, among other reasons<sup>*\**</sup>, the squared difference is continuously differentiable; hence the name "sum of squared residuals", or "sum of squared errors", or simply "sum of squares".
+In practice, we square the residuals (or errors) since, among other reasons<sup>*\**</sup>, the squared difference is continuously differentiable; hence the name "sum of squared residuals", "sum of squared errors", or simply "sum of squares".
 
-### Sum of squares
+### Sum of Squares
 
 Now that we have solved the problem above, we can calculate the sum of squared errors:
 
@@ -66,9 +68,9 @@ We can do this for other linear functions! If, for example, we had 3-dimensional
 	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_6.png"/>
 </p>
 
-However, if we're dealing with data that has a higher dimensionality, we're gonna have a bad time writing the sum of squares expression...
+However, if we're dealing with data that has a higher dimensionality, we're gonna have a bad time writing the sum of squares expression this way...
 
-### Multivariate sum of squares
+### Multivariate Sum of Squares
 
 In the example above, we wrote the sum of squares formula in terms of functions that deal with 2-dimensional and 3-dimensional data (where one of those dimensions is the target), respectively. In real world scenarios, we may come across data that is described by several more variables. It would be useful, then, to generalize the sum of squares expression so that it applies to data of any dimensionality. The equation for a linear function which takes an *m*-dimensional input *x* can be written as *f(x) = a<sub>1</sub>.x<sub>1</sub> + a<sub>2</sub>.x<sub>2</sub> + ... + a<sub>m</sub>.x<sub>m</sub> + b*. Here, *x<sub>m</sub>* corresponds to the value of *x* for its *m*-th dimension, and *a<sub>m</sub>* is its coefficient. We will refer to an *m*-dimensional input, *(x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>m</sub>)*, as **x** for simplicity. Now, we can use **x** to refer to an input vector with any dimensionality. We can then rewrite generalized the sum of squares as:
 
@@ -78,17 +80,17 @@ In the example above, we wrote the sum of squares formula in terms of functions 
 
 Now, **x**<sub>*n*</sub>, the *n*-th input value, is a vector with any amount of dimensions. We still use *y<sub>n</sub>* to refer to the real target value for the *n*-th sample.
 
-### Mean squared error
+### Mean Squared Error
 
-A popular variation of the sum of squares is called the "mean squared error".
+A popular variation of the sum of squares is called the "mean squared error", or MSE for short.
 
 <p align="center">
 	<img src="/img/learning/prerequisites/sum-of-squares/sum_of_squares_8.png"/>
 </p>
 
-As the name suggests, the mean squared error over all *N* data points returns the *mean* (or average) error.
+As the name suggests, the MSE over all *N* data points returns the *mean* (or average) error.
 
-### Error functions
+### Error Functions
 
 In mathematical optimization, a loss function, error function, or cost function, is a function that maps an event to its "cost" (a real number). In optimization, the goal is usually to *minimize a loss function*. In contrast, for a few particular domains, it is more common to instead try to *maximize an objective function* (also called reward function, utility function, etc.). We will however, only deal with the former, since it is *far* more common in the fields herein discussed.
 
