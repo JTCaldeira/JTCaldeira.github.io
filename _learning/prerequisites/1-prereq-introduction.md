@@ -16,4 +16,4 @@ There are three types of ML:
 
 The plan is to focus on supervised learning in the beginning of the development of the content, but the other two are definitely on the roadmap.
 
-Readers should go through the other pages in this section (Prerequisites) before moving on to the good stuff below. The [next page](/learning/prerequisites/what-you-should-know) details what you should already be familiar with; and the pages that follow will be the basis for most, of the content in the other sections.
+Readers should go through the other pages in this section (Prerequisites) before moving on to the good stuff below. The [next page](/learning/prerequisites/what-you-should-know) details what you should already be familiar with. The pages that follow will be the basis for most of the content in the other sections. While not everything in the Prerequisites section is required for everything in the other sections (*e.g.* you don't need to understand gradient descent to learn decision trees), the concepts herein were deemed by me to either be a stepping stone for more advanced material, or of enough transversal importance to be a "prerequisite".
