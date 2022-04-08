@@ -5,7 +5,7 @@ background: '/img/bg-post.jpg'
 
 This is (under construction) a small repository of introductory material/tutorials to a few topics I consider interesting or useful around the area of machine learning.
 
-If you're not quite familiar with machine learning, I would advise you to start by reading 'Prerequisites', and then follow along to whichever topic you want!
+The reader is advised to go through [start here](/learning/start-here) if they are not acquainted with the structure and content of the repository.
 
 If you have:
 - Found a mistake in the content
