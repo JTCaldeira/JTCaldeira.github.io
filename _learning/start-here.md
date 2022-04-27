@@ -2,15 +2,16 @@
 title: Start Here
 slug: start-here
 background: '/img/bg-post.jpg'
+lesson_number: 1
 ---
 
-### Preface
+## Preface
 
 Though I'm currently planning to focus on content related to machine learning (ML), I can't promise I will not post about other cool computer science stuff I find interesting.
 
 However, since ML is indeed "my thing", you can read through the rest of the material in this area of the website assuming it to be the matter at hand. Though the aim is for each topic in ML to be as self-contained as possible, reading the topics in order is recommended. This does not apply to the Deep Learning and Maths sections.
 
-### What is Machine Learning?
+## What is Machine Learning?
 
 Unlike "natural intelligence", as displayed by humans and many animals, Artificial Intelligence refers to intelligence demonstrated by machines. Among its objectives are the fields of search, planning, knowledge reasoning and, the most dominant one, Machine Learning (ML).
 
@@ -23,7 +24,9 @@ There are three types of ML:
 
 The plan is to focus on supervised learning in the beginning of the development of the content, but the other two are definitely on the roadmap.
 
-### Prerequisites
+Some might notice a whole separate section for Deep Learning (DL), even though it is a part of Machine Learning. I chose to separate it from the rest of ML due to the depth I intend on taking that topic to. Furthermore, the Math section will be home to more in-depth explanations about mathematical concepts which are not commonly taught in undergrad courses but have important roles in ML or DL.
+
+## Prerequisites
 
 This section describes the mathematical knowledge base you probably should be familiar with if you want to understand the basics of ML. In a broad stroke, these are the concepts you should be somewhat comfortable with already:
 
