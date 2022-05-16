@@ -48,7 +48,7 @@ $$
 \- but wait, we can generalize this computation for any number of data points. Let's say that the line corresponds to a function $f$, and that our dataset $D$ consists of $M$ tuples $(x, y)$, where $y$ is the target variable. Then, we could write a more general formula for calculating the sum of squared errors:
 
 \begin{equation}\label{ss}
-Error(D, f) = \sum_{i = 1}^{M} (f(x_i) - y)^2
+Error(D, f) = \sum_{i = 1}^{M} (f(x_i) - y_i)^2
 \end{equation}
 
 We have now achieved what we set out to do: we have a function - an *error function* - which quantifies how well the line drawn by $f$ fits our dataset. This error function is known as the *sum of squares*, or *sum of squared errors*, for obvious reasons. Let's now put our dataset aside for a second and talk a bit about error functions.
@@ -68,13 +68,13 @@ Let's now return to our data, the line that we are trying to use to fit to the d
 First of all, recall that the generic line equation is $f(x) = ax + b$, where $a$ is the slope of the line and $b$ its *y-intercept*. We can then write the sum of squared errors for this simple line function, considering the same dataset:
 
 \begin{equation}\label{ss-line}
-Error(D, f) = \sum_{i = 1}^{M} ((ax_i + b) - y)^2
+Error(D, f) = \sum_{i = 1}^{M} ((ax_i + b) - y_i)^2
 \end{equation}
 
 This is really the same thing that we did before, except now we replaced $f(x)$ by the actual "body" of the function. But what if we had higher-dimensional data? For example, what if our data were tuples $(x_1, x_2, y)$, where $y$ is still our target variable? Then, you might imagine that we would be trying to fit a 3D plane to the data, instead of a line. In that case, our sum of squares function would look like this:
 
 \begin{equation}\label{ss-plane}
-Error(D, f) = \sum_{i = 1}^{M} ((ax_{i,1} + bx_{i,2} + c) - y)^2
+Error(D, f) = \sum_{i = 1}^{M} ((ax_{i,1} + bx_{i,2} + c) - y_i)^2
 \end{equation}
 
 However, if we're dealing with data that has even higher dimensionality, we're gonna have a bad time writing the sum of squares expression this way...
@@ -102,19 +102,19 @@ Notice that both $\theta, \v{x}$ are column vectors, i.e., they have dimension $
 So if we now write the sum of squared errors (SSE) where we have a multivariate linear function instead of just a line or a plane, we have:
 
 \begin{equation}
-SSE(D, \v{\theta}) = \sum_{i = 1}^{M} (\v{\theta}^\top \v{x}_i - y)^2
+SSE(D, \v{\theta}) = \sum_{i = 1}^{M} (\v{\theta}^\top \v{x}_i - y_i)^2
 \end{equation}
 
 Notice how we don't say $f$ is an argument to the error function, but rather its parameters $\v{\theta}$. This is somewhat of an arbitrary choice, really, but it'll make sense later. Notice also how we've been writing expressions for *linear* functions. We can actually apply the sum of squares to *any* type of function that we're using to try to fit some data. Let $f_\v{\theta}$ be one such function, parameterized by $\v{\theta}$. We write the general expression for the multivariate sum of squares:
 
 \begin{equation}
-SSE(D, f_\v{\theta}) = \sum_{i = 1}^{M} (f_\v{\theta}(\v{x}_i) - y)^2
+SSE(D, f_\v{\theta}) = \sum_{i = 1}^{M} (f_\v{\theta}(\v{x}_i) - y_i)^2
 \end{equation}
 
 A popular variation of the sum of squares is called the *mean squared error*, or MSE for short.
 
 \begin{equation}
-MSE(D, f_\v{\theta}) = \frac{1}{M} \sum_{i = 1}^{M} (f_\v{\theta}(\v{x}_i) - y)^2
+MSE(D, f_\v{\theta}) = \frac{1}{M} \sum_{i = 1}^{M} (f_\v{\theta}(\v{x}_i) - y_i)^2
 \end{equation}
 
 As the name suggests, the MSE over all $M$ data points returns the *mean* (or average) error, so it is really just the sum of squares divided by the number of samples $M$.
